@@ -14,11 +14,13 @@ async function getAnimal() {
     resultBox.innerHTML = "Loading...";
 
     try {
-        const apiBase = 'http://localhost:3000';
+        const apiBase = '';
         const response = await fetch(`${apiBase}/api/animal?name=${encodeURIComponent(animal)}`);
 
         if (!response.ok) {
-            throw new Error("Gagal mengambil data dari server");
+            const errorData = await response.json().catch(() => null);
+            const message = errorData?.error || "Gagal mengambil data dari server";
+            throw new Error(message);
         }
 
         const data = await response.json();
