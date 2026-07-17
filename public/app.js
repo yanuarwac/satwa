@@ -47,3 +47,11 @@ async function getAnimal() {
         console.error(error);
     }
 }
+
+// Trigger search when Enter key is pressed
+document.getElementById("animalName").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        getAnimal();
+    }
+});
+
