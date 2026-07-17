@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animal Search</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Satwapedia</h1>
+    <div class="search-box">
+      <input type="text" id="animalName" placeholder="Masukkan nama hewan..." value="" />
+      <button onclick="getAnimal()">Cari</button>
+    </div>
+    <div id="result">Silakan masukkan nama hewan untuk memulai (contoh: duck, tiger, lion, dll ).</div>
+  </div>
+
+  <script src="/index.js"></script>
+  <script>
+    if (location.protocol === 'file:') {
+      const result = document.getElementById('result');
+      if (result) {
+        result.innerHTML = '<p style="color:darkred">.</p>';
+      }
+    }
+  </script>
+</body>
+
+</html>
